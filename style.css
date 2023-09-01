@@ -1,0 +1,68 @@
+/* SMARTPHONES */
+
+body {
+    background-color: lightcoral;
+    /* position: relative; */
+}
+
+#small, #medium, #large {
+    font-size: .8rem;
+    margin: 5%;
+    padding: 5%;
+    background-color: snow;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+/* TABLETS */
+
+@media only screen and (min-width: 410px) {
+    body {
+        background-color: lightgreen;
+    }
+    main {
+        padding: 5% 2%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: minmax(200px, auto);
+        grid-gap: 2%;
+        grid-template-areas: 
+            "smartphones tablettes"
+            "ordinateur ordinateur"
+            
+    }
+    #small, #medium, #large {
+        font-size: 1rem;
+        margin: 0;
+    }
+    #small {
+        grid-area: smartphones;
+    }
+    #medium {
+        grid-area: tablettes;
+    }
+    #large {
+        grid-area: ordinateur;
+    }
+}
+
+
+/* COMPUTERS */
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "smartphones tablettes ordinateur"
+    }
+    #small, #medium, #large {
+        font-size: 1.2rem;
+    }
+}
